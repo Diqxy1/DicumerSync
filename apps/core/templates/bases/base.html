@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="pt-br">
+  <head>
+    <title>Admin Dicumer</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'uikit/css/uikit.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/global.css' %}">
+  </head>
+  <body>
+    <nav class="uk-navbar-container sync-padding-x" uk-navbar>
+
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+          <li class="uk-active">
+            <a href="{% url 'accounts:dashboard' %}">Dicumer</a>
+          </li>
+          <li class="uk-active">
+            <a href="{% url 'customers:list' %}">list</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="uk-navbar-right">
+
+        <ul class="uk-navbar-nav">
+          <li>
+            <a href="#">{{ user }}</a>
+            <div class="uk-navbar-dropdown">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li>
+                  <a href="{% url 'accounts:logout' %}">Sair</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+
+    </nav>
+
+    <div class="uk-padding-large">
+      {% block content %} {% endblock %}
+    </div>
+
+    <script src="{% static 'uikit/js/uikit.min.js' %}"></script>
+    <script src="{% static 'uikit/js/uikit-icons.min.js' %}"></script>
+  </body>
+</html>

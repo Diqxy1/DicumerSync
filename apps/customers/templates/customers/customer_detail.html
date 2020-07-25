@@ -1,0 +1,38 @@
+{% extends 'bases/base.html' %}
+
+{% block content %}
+
+<h1>{{ customer.get_full_name }}</h1>
+<table class="uk-table uk-table-divider">
+  <thead>
+    <tr>
+      <th>Endedreço</th>
+      <th>Bairro</th>
+      <th>Referência</th>
+      <th>Telefone</th>
+      <th>Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{ customer.customer_address }}</td>
+      <td>{{ customer.customer_district }}</td>
+      <td>{{ customer.reference_address }}</td>
+      <td>{{ customer.customer_phone }}</td>
+      <td>
+        <div>
+          <a href="{% url 'customers:detail' customer.pk %}"
+          class="uk-button uk-button-primary uk-button-small">
+          Ver
+        </a>
+        <a href="{% url 'customers:update' customer.pk %}"
+        class="uk-button uk-button-default uk-button-small">
+        Editar
+      </a>
+    </div>
+  </td>
+</tr>
+</tbody>
+</table>
+
+{% endblock %}
