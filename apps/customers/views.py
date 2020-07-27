@@ -2,12 +2,14 @@ from django.shortcuts import get_object_or_404, redirect
 from django.views.generic import ListView, CreateView, DetailView, UpdateView, View
 from django.urls import reverse_lazy
 from .models import Customer
+from .forms import CustomerForm
 
 # Create your views here.
 class CustomerPostMixin:
     model = Customer
-    fields = '__all__'
+    # fields = '__all__'
     success_url = reverse_lazy('customers:list')
+    form_class = CustomerForm
 
 
 customer_list = ListView.as_view(model=Customer)
