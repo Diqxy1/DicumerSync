@@ -21,10 +21,6 @@
       <td>{{ customer.customer_phone }}</td>
       <td>
         <div>
-          <a href="{% url 'customers:detail' customer.pk %}"
-          class="uk-button uk-button-primary uk-button-small">
-          Ver
-        </a>
         <a href="{% url 'customers:update' customer.pk %}"
         class="uk-button uk-button-default uk-button-small">
         Editar

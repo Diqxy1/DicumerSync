@@ -18,6 +18,6 @@ from django.urls import path, include
 
 urlpatterns = [
     path('disync/', admin.site.urls),
-    path('admin/', include('apps.accounts.urls', namespace='accounts')),
+    path('accounts/', include('apps.accounts.urls', namespace='accounts')),
     path('customers/', include('apps.customers.urls', namespace='customers')),
 ]
